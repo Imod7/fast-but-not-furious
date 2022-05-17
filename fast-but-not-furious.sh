@@ -5,6 +5,12 @@ GREEN="\x1b[38;2;80;200;120m"
 YELLOW="\x1b[38;2;253;253;150m"
 RESET="\e[0m"
 
+# To implement flags like : 
+# 1. flag -o  : Search in other blockchains eg. ethereum 
+# 2. flag -rc : relaychain -  only Polkadot related searches
+# 3. flag -p  : parachains - executes also parachain related searches
+
+
 printf $YELLOW
 cat ascii.txt 
 printf $RESET
@@ -82,4 +88,15 @@ do
     /Applications/Firefox.app/Contents/MacOS/firefox --new-tab $argsSearchs
     printf "  $argsSearchs \n"
   done
+done
+
+
+# Searching in Substrate Stack Exchange
+printf "\n$BLUE Searching in Substrate Stack Exchange $RESET \n"
+for keyword in "${KEYWORDS[@]}";
+do
+  argsSearchs="https://substrate.stackexchange.com/search?q=$keyword"
+  sleep 0.5
+  /Applications/Firefox.app/Contents/MacOS/firefox --new-tab $argsSearchs
+  printf "  $argsSearchs \n"
 done
