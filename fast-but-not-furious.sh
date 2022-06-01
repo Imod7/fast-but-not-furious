@@ -9,6 +9,10 @@ RESET="\e[0m"
 # 1. flag -o  : Search in other blockchains eg. ethereum 
 # 2. flag -rc : relaychain -  only Polkadot related searches
 # 3. flag -p  : parachains - executes also parachain related searches
+# Add Search for 
+# Polkadot Watercooler element room
+# Parachain Technical
+# Substrate Technical (Public)
 
 
 printf $YELLOW
@@ -90,7 +94,6 @@ do
   done
 done
 
-
 # Searching in Substrate Stack Exchange
 printf "\n$BLUE Searching in Substrate Stack Exchange $RESET \n"
 for keyword in "${KEYWORDS[@]}";
@@ -100,3 +103,15 @@ do
   /Applications/Firefox.app/Contents/MacOS/firefox --new-tab $argsSearchs
   printf "  $argsSearchs \n"
 done
+
+# Searching in Parity's Forum
+printf "\n$BLUE Searching in Parity's Forum $RESET \n"
+for keyword in "${KEYWORDS[@]}";
+do
+  argsSearchs="https://forum.parity.io/search?q=$keyword"
+  sleep 0.5
+  /Applications/Firefox.app/Contents/MacOS/firefox --new-tab $argsSearchs
+  printf "  $argsSearchs \n"
+done
+
+
